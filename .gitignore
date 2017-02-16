@@ -6,3 +6,14 @@ node_modules/
 .sass-cache
 /nbproject/private/
 .idea
+
+/source/components
+
+
+
+# Composer directories.
+vendor/
+bin/
+
+# IDE and system config files.
+*.DS_Store
