@@ -1,25 +1,3 @@
-/**
- * Custom reveal.js theme for Mediacurrent
- */
-
-/*********************************************
- * Variables
- *********************************************/
-
-// Company Brand Colors
-$orange: #d09215;
-$blue: #003954;
-$green: #9fc855;
-$light-gray: #dbe8ec;
-$medium-gray: #7f9aa0;
-$dark-gray: #344041;
-$darker-gray: #222f31;
-$black: #1a2526;
-$white: #fff;
-
-
-$sans-serif: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
-
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -28,7 +6,7 @@ body {
 }
 
 .reveal {
-  font-family: $sans-serif;
+  font-family: $font;
   font-size: 36px;
   font-weight: 300;
   color: $black; }
