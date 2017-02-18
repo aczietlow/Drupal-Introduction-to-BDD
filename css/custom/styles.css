@@ -22,6 +22,11 @@ body {
 }
 
 /* line 14, ../../sass/_custom.scss */
+.has-light-background {
+  color: #fff !important;
+}
+
+/* line 18, ../../sass/_custom.scss */
 ::selection {
   color: white;
   background: #ff5e99;
@@ -31,7 +36,7 @@ body {
 /*********************************************
  * HEADERS
  *********************************************/
-/* line 22, ../../sass/_custom.scss */
+/* line 26, ../../sass/_custom.scss */
 .reveal h1,
 .reveal h2,
 .reveal h3,
@@ -45,10 +50,15 @@ body {
   font-weight: 600;
 }
 
+/* line 39, ../../sass/_custom.scss */
+.reveal .has-light-background h1 {
+  color: #fff;
+}
+
 /*********************************************
  * CALLOUT TEXT
  *********************************************/
-/* line 38, ../../sass/_custom.scss */
+/* line 46, ../../sass/_custom.scss */
 .reveal .large {
   font-size: 52px;
 }
@@ -56,7 +66,7 @@ body {
 /*********************************************
  * LINKS
  *********************************************/
-/* line 45, ../../sass/_custom.scss */
+/* line 53, ../../sass/_custom.scss */
 .reveal a:not(.image) {
   color: #d09215;
   text-decoration: none;
@@ -67,7 +77,7 @@ body {
   transition: color .15s ease;
 }
 
-/* line 54, ../../sass/_custom.scss */
+/* line 62, ../../sass/_custom.scss */
 .reveal a:not(.image):hover {
   color: #7f9aa0;
   text-shadow: none;
@@ -77,7 +87,7 @@ body {
 /*********************************************
  * IMAGES
  *********************************************/
-/* line 63, ../../sass/_custom.scss */
+/* line 71, ../../sass/_custom.scss */
 .reveal section img {
   margin: .5em 0px;
 }
@@ -85,46 +95,46 @@ body {
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
-/* line 70, ../../sass/_custom.scss */
+/* line 78, ../../sass/_custom.scss */
 .reveal .controls div.navigate-left,
 .reveal .controls div.navigate-left.enabled {
   border-right-color: #d09215;
 }
 
-/* line 74, ../../sass/_custom.scss */
+/* line 82, ../../sass/_custom.scss */
 .reveal .controls div.navigate-right,
 .reveal .controls div.navigate-right.enabled {
   border-left-color: #d09215;
 }
 
-/* line 78, ../../sass/_custom.scss */
+/* line 86, ../../sass/_custom.scss */
 .reveal .controls div.navigate-up,
 .reveal .controls div.navigate-up.enabled {
   border-bottom-color: #d09215;
 }
 
-/* line 82, ../../sass/_custom.scss */
+/* line 90, ../../sass/_custom.scss */
 .reveal .controls div.navigate-down,
 .reveal .controls div.navigate-down.enabled {
   border-top-color: #d09215;
 }
 
-/* line 86, ../../sass/_custom.scss */
+/* line 94, ../../sass/_custom.scss */
 .reveal .controls div.navigate-left.enabled:hover {
   border-right-color: #7f9aa0;
 }
 
-/* line 89, ../../sass/_custom.scss */
+/* line 97, ../../sass/_custom.scss */
 .reveal .controls div.navigate-right.enabled:hover {
   border-left-color: #7f9aa0;
 }
 
-/* line 92, ../../sass/_custom.scss */
+/* line 100, ../../sass/_custom.scss */
 .reveal .controls div.navigate-up.enabled:hover {
   border-bottom-color: #7f9aa0;
 }
 
-/* line 95, ../../sass/_custom.scss */
+/* line 103, ../../sass/_custom.scss */
 .reveal .controls div.navigate-down.enabled:hover {
   border-top-color: #7f9aa0;
 }
@@ -132,12 +142,12 @@ body {
 /*********************************************
  * PROGRESS BAR
  *********************************************/
-/* line 101, ../../sass/_custom.scss */
+/* line 109, ../../sass/_custom.scss */
 .reveal .progress {
   background: black;
 }
 
-/* line 104, ../../sass/_custom.scss */
+/* line 112, ../../sass/_custom.scss */
 .reveal .progress span {
   background: #d09215;
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
@@ -150,7 +160,7 @@ body {
 /*********************************************
  * OVERRIDES
  *********************************************/
-/* line 115, ../../sass/_custom.scss */
+/* line 123, ../../sass/_custom.scss */
 .reveal blockquote {
   text-align: center;
   display: block;
@@ -162,7 +172,7 @@ body {
   background: #344041;
 }
 
-/* line 126, ../../sass/_custom.scss */
+/* line 134, ../../sass/_custom.scss */
 .reveal section pre code {
   display: block;
   padding: 0.5em;
@@ -173,34 +183,34 @@ body {
 /*********************************************
  * AD HOC CUSTOM CLASSES (Originally by Larry)
  *********************************************/
-/* line 136, ../../sass/_custom.scss */
+/* line 144, ../../sass/_custom.scss */
 .reveal pre {
   width: 100%;
 }
 
-/* line 140, ../../sass/_custom.scss */
+/* line 148, ../../sass/_custom.scss */
 q:before {
   content: '\201C';
 }
 
-/* line 143, ../../sass/_custom.scss */
+/* line 151, ../../sass/_custom.scss */
 q:after {
   content: '\201D';
 }
 
-/* line 147, ../../sass/_custom.scss */
+/* line 155, ../../sass/_custom.scss */
 .reveal section img {
   border: 0px;
   box-shadow: none;
   background: none;
 }
 
-/* line 153, ../../sass/_custom.scss */
+/* line 161, ../../sass/_custom.scss */
 p.bigtext {
   font-size: 150%;
 }
 
-/* line 157, ../../sass/_custom.scss */
+/* line 165, ../../sass/_custom.scss */
 .sidebar {
   float: left;
   width: 10%;

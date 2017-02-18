@@ -11,6 +11,10 @@ body {
   font-weight: 300;
   color: $black; }
 
+.has-light-background {
+  color: $white !important;
+}
+
 ::selection {
   color: white;
   background: #ff5e99;
@@ -30,6 +34,10 @@ body {
   line-height: 0.9em;
   letter-spacing: -0.025em;
   font-weight: 600;
+}
+
+.reveal .has-light-background h1 {
+  color: $white;
 }
 
 /*********************************************
