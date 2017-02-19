@@ -203,7 +203,7 @@
     </section>
     <section>
       <section>
-        <h2>Plan with Examples</h2>
+        <h2>Plan with Examples (Behaviors)</h2>
         <p class="fragment" data-fragment-index="0">Imagine we have an ecommerce shop</p>
         <p class="fragment" data-fragment-index="1">Feature: Add sales tax and a delivery cost on checkout</p>
         <pre class="fragment" data-fragment-index="2"><code data-trim contenteditable>
@@ -247,8 +247,8 @@ Then [expected outcome of that action]
         <h2>Drupal Example with the magic words</h2>
         <p class="fragment" data-fragment-index="0">I want to be able to create and edit content on my site to inform the world that dogs are objectively better then cats.</p>
 <pre class="fragment" data-fragment-index="1"><code data-trim contenteditable>
-Given I using my website
-When I go to the login page
+Given I am an admin of the site
+When I log in
 Then I should be able to create content
 </code></pre>
       </section>
@@ -266,351 +266,14 @@ Then I should be able to create content
       </section>
       <section>
         <h2>Costs</h2>
-      </section>
-    </section>
-
-    <section>
-      <section>
-        <h2>Why should you bother?</h2>
-        <ul>
-          <li>Better code quality</li>
-          <li>Less Regression</li>
-          <li>Better Acceptance Criteria</li>
-          <li>Greater understanding of code base</li>
-          <li><strong>Faster development</strong></li>
-        </ul>
+        <p class="fragment" data-fragment-index="0">Only pay for what for what features are used. A pay per <strong>capability</strong>model.</p>
+        <p class="fragment" data-fragment-index="1">Stop and ship as soon as we're done</p>
       </section>
       <section>
-        <h2>What is quality anyway?</h2>
-        <img src="assets/code-review.png"/>
-        <aside class="notes">
-          <p>your team should decide what the code quality means to you.</p>
-
-          <ul>
-            <li>Testible</li>
-            <li>Compliant</li>
-            <li>Clear</li>
-            <li>Well Documented</li>
-          </ul>
-
-          One does not simply add quality later
-        </aside>
-      </section>
-      <section>
-        <h2>Faster development you say?</h2>
-        <aside class="notes">
-          <ul>
-            <li>Fewer bugs, less time squashing them</li>
-            <li>Forces you to better understand code base</li>
-            <li>Avoid building code on top of an unknown bug</li>
-          </ul>
-        </aside>
-      </section>
-    </section>
-    <section>
-      <section>
-        <h2>Why your client should care about testing</h2>
-        <ul>
-          <li>Better product quality</li>
-          <li>Less Regression</li>
-          <li>Better Acceptance Criteria</li>
-          <li><strong>Faster development</strong></li>
-        </ul>
-        <aside class="notes">
-          <ul>
-            <li>Better product quality - better functioning product</li>
-            <li>Less Regression - Less time going back t fix bugs</li>
-            <li>Better Acceptance Criteria - Product better fits actually business needs</li>
-            <li>Greater understanding of product - </li>
-            <li><strong>Faster development</strong> - more bang for your buck</li>
-          </ul>
-        </aside>
-      </section>
-    </section>
-    <section>
-      <section>
-        <h2>Why isn't everyone doing this testing thing?</h2>
-        <h4>Testing takes time</h4>
-        <p>Case studies conducted at Microsoft and IBM indicate that teams that adopt TDD experience 40% to 90% bugs, which results in 15-35% additional development time.</p>
-      </section>
-      <section>
-        <h2>More Excuses</h2>
-        <h4>Writing good tests is hard</h4>
-        <p>"Imperfect tests, run frequently, are much better than perfect tests that are never written at all." - Martin Fowler</p>
-      </section>
-    </section>
-    <section>
-      <section>
-        <h2>Enter Behat: Our hero</h2>
-        <p>Behat is a BDD (Behavior Driven Development) framework written in PHP</p>
-      </section>
-      <section>
-        <h2>Seriously, we can do this in Drupal?</h2>
-        <p>There's the module for that, because of course there is </p>
-        <a href="https://www.drupal.org/project/drupalextension">Drupal Extension</a>
-        <br />
-        <img src="assets/beehat-drupalicon.png" alt="Behat" />
-      </section>
-      <section>
-        <h2>Installation</h2>
-        <p>Composer.json</p>
-        <pre><code data-trim contenteditable>
-    "require": {
-        "behat/behat": "3.0.*@stable",
-        "drupal/drupal-extension": "3.0.*@dev"
-    }
-</code></pre>
-        <p>Behat.yml</p>
-        <pre><code data-trim contenteditable>
-default:
-    suites:
-        default:
-            contexts:
-                - FeatureContext
-                - Drupal\DrupalExtension\Context\DrupalContext
-extensions:
-    Behat\MinkExtension:
-</code></pre>
-        <a href="#">Use your google powers</a>
-      </section>
-    </section>
-    <section>
-      <section>
-        <h2>Define Features</h2>
-        <img src="assets/file-structure.png" height="300"/>
-        <p>Tests are saved in .feature files</p>
-      </section>
-      <section>
-        <h2>User Login</h2>
-        <h4>Client Requirement</h4>
-        <pre><code data-trim contenteditable>
-I want to be able to log into my website in order to edit my content.
-        </code></pre>
-      </section>
-      <section>
-        <h2>User Login</h2>
-        <h4>Requirements we can use</h4>
-        <pre><code data-trim contenteditable>
-As a an anonymous user,
-I want to be able to log into my website,
-So that I can edit my content.
-</code></pre>
-        <aside class="notes">
-          3 lines that describe the role, the feature, and the benefit
-        </aside>
-      </section>
-      <section>
-        <h2>User Login</h2>
-        <h4>Acceptance Criteria</h4>
-        <p>What does it mean to be logged in? How do we know that we are logged in?</p>
-        <pre><code data-trim contenteditable>
-Given I am an anonymous user
-When I am at "user/login"
-And I fill in "name" with "admin"
-And I fill in "pass" with "admin"
-And press "Log in"
-Then I should see the link "Log out"
-</code></pre>
-        <aside class="notes">
-          Given [some context]
-          When [some event]
-          Then [outcome]
-        </aside>
-      </section>
-      <section>
-        <h2>User Login</h2>
-        <h4>Acceptance Criteria</h4>
-        <p>How do we check can edit content. </p>
-        <pre><code data-trim contenteditable>
-Given I am logged in as a user with the administrator role
-When I am at "node/add/page"
-Then I should see "Create Basic page"
-And I should get a 200 HTTP response
-</code></pre>
-      </section>
-      <section>
-        <h2>User Login</h2>
-        <p>Slap it in a feature file and boom you have your test.</p>
-        <pre><code data-trim contenteditable>
-#./features/user_login.feature
-@api
-Feature: User Login.
-  As a an anonymous user,
-  I want to be able to log into my website,
-  So that I can edit my content.
-
-Scenario: I can log in.
-  Given I am an anonymous user
-  When I am at "user/login"
-  And I fill in "name" with "admin"
-  And I fill in "pass" with "admin"
-  And press "Log in"
-  Then I should see the link "Log out"
-
-Scenario: I can edit content
-  Given I am logged in as a user with the administrator role
-  When I am at "node/add/page"
-  Then I should see "Create Basic page"
-  And I should get a 200 HTTP response
-</code></pre>
-        <aside class="notes">
-          <ul>
-            <li>Top Section: Describe the feature. Provides human context </li>
-            <li>Each feature is described by multiple scenarios - How the feature should act under certain conditions</li>
-            <li>Each of the scenario lines map to function that defines what actions to take.</li>
-          </ul>
-        </aside>
-      </section>
-      <section>
-        <h2>Executing tests</h2>
-        <pre><code data-trim contenteditable>
-$ bin/behat features/user_login.feature
-</code></pre>
-        <img src="assets/user-login-results.png" />
-      </section>
-    </section>
-
-    <section>
-      <section>
-        <h2>Events Feature</h2>
-        <pre><code data-trim contenteditable>
-    @api
-    Feature: Content Type Event
-        As an anonymous user
-        I want to view data related to an Event
-        So that I can decide it is something I would like to attend.
-
-    Scenario: Add an event node and verify that the necessary fields exist.
-        Given I am an anonymous user
-        And an "Event Terms" term with the name "camp"
-        And an "Event Terms" term with the name "drupal"
-        And "event" content:
-        | title | field_event_location | field_event_date | field_event_tags | status |
-        | Florida Drupal Camp | Orlando | 2015-04-11 9:00:00 | camp, drupal | 1 |
-        When I am at "content/florida-drupal-camp"
-        Then I should see the text "Florida Drupal Camp"
-        And I should see the text "Orlando"
-        And I should see the text "Saturday, April 11, 2015"
-        And I should see the text "camp"
-        And I should see the text "drupal"
-</code></pre>
-      </section>
-    </section>
-    <section>
-      <section>
-        <h2>Step Defintions</h2>
-        <p>Each scenario step maps to a function that performs the step</p>
-        <pre><code data-trim contenteditable>
-    Given I am an anonymous user
-</code></pre>
-        <pre><code data-trim contenteditable>
-/**
- * @Given I am an anonymous user
- * @Given I am not logged in
- */
- public function assertAnonymousUser() {
-   // Verify the user is logged out.
-   if ($this->loggedIn()) {
-   $this->logout();
- }
-
-</code></pre>
-      </section>
-      <section>
-        <h2>Step Definitions</h2>
-        <p>Out of the box the Mink and Drupal Drivers will provide a lot of step definitions that you can use.</p>
-        <pre><code data-trim contenteditable>
-    $ behat -dl
-</code></pre>
-        <pre><code data-trim contenteditable>
-default | When I visit the login page
-default | Given I am an anonymous user
-default | Given I am not logged in
-default | Given I am logged in as a user with the :role role(s)
-default | Given I am logged in as a user with the :role role(s) and I have the following fields:
-default | Given I am logged in as :name
-default | Given I am logged in as a user with the :permissions permission(s)
-default | Then I should see (the text ):text in the ":rowText" row
-default | Given I click :link in the :rowText row
-</code></pre>
-      </section>
-      <section>
-        <h2>Custom Step Definitions</h2>
-        <pre><code data-trim contenteditable>
-    Feature: Migrations
-    As an editor of the website
-    I want the workbench module enabled
-    So that I can create custom editing work flows
-
-
-    Scenario: Confirm the workbench module is installed
-        Given the "workbench" module is installed
-</code></pre>
-      </section>
-      <section>
-        <h2>Custom Step Definitions</h2>
-        <p>Custom step definitions go in features/bootstrap/FeatureContext.php</p>
-        <pre><code data-trim contenteditable>
-//features/bootstrap/FeatureContext.php
-use Drupal\DrupalExtension\Context\RawDrupalContext;
-use Behat\Behat\Context\SnippetAcceptingContext;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
-
-/**
-* Defines application features from the specific context.
-*/
-class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
-{
-
-}
-        </code></pre>
-      </section>
-      <section>
-        <h2>Custom Step Defintions</h2>
-        <pre><code data-trim contenteditable>
-/**
- * Asserts that a given module exists and is enabled.
- *
- * @Given the :module module is installed
- */
- public function assertModuleExists($module)
- {
-   if (module_exists($module)) {
-   return TRUE;
- }
-
-  $message = sprintf('Module "%s" is not installed.', $module);
-  throw new \Exception($message);
-}
-        </code></pre>
-        <aside class="notes">
-          By extending the drupal extension we get access to a bootstrapped drupal as well as any methods they've already defined, like nodeCreate() and login()
-        </aside>
-      </section>
-      <section>
-        <h2>More custom defintions</h2>
-        <pre><code data-trim contenteditable>
-            Then "events" migration is complete$/
-        </code></pre>
-        <pre><code data-trim contenteditable>
-/**
- * Asserts the given migration is complete.
- *
- * @Then /^the "([^"]*)" migration is complete$/
- *
- * @throws /Exception if the migration did not complete.
- */
- public function assertMigrationIsComplete($name)
- {
-   $migration = Migration::getInstance($name);
-   if ($migration->isComplete()) {
-     return TRUE;
-   }
-   $message = sprintf('The "%s" migration is not complete.', $name);
-   throw new \Exception($message);
-}
-        </code></pre>
+        <h2>Risks</h2>
+        <p class="fragment" data-fragment-index="0">Regular Delivery, Regular Feedback</p>
+        <p class="fragment" data-fragment-index="1">Measure results</p>
+        <p class="fragment" data-fragment-index="2">Know what "DONE" is</p>
       </section>
     </section>
     <section style="text-align: left;">
@@ -620,11 +283,14 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
         - tests are good for you, the client, and the product
       </p>
       <p>
-        - <a href="http://docs.behat.org/en/v2.5/">Behat Documentation</a> <br>
+        - <a href="http://docs.behat.org/en/latest/">Behat Documentation</a> <br>
         - <a href="https://github.com/aczietlow/Scylla">Behat in a box</a> <br>
         - Follow me on twitter: <a href="https://twitter.com/aczietlow">@aczietlow</a>
       </p>
     </section>
+
+
+
 
 
 

@@ -18,7 +18,7 @@ body {
 .reveal {
   font-family: Source Sans Pro, Oswald, sans-serif;
   font-size: 36px;
-  font-weight: 300;
+  font-weight: 400;
   color: #fff;
   background-color: #2f8c87;
 }
@@ -65,7 +65,7 @@ body {
  *********************************************/
 /* line 54, ../../sass/_custom.scss */
 .reveal a:not(.image) {
-  color: #d09215;
+  color: #003954;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
