@@ -9,7 +9,9 @@ body {
   font-family: $font;
   font-size: 36px;
   font-weight: 300;
-  color: $black; }
+  color: $white;
+  background-color: $light-green;
+}
 
 .has-light-background {
   color: $white !important;
@@ -26,7 +28,7 @@ body {
 .reveal {
   h1, h2, h3, h4, h5, h6 {
     margin: 0 0 20px 0;
-    color: $orange;
+    color: $white;
     line-height: 0.9em;
     letter-spacing: -0.025em;
     font-weight: 600;
@@ -37,10 +39,6 @@ body {
   h1, h2, h3, h4, h5, h6 {
     color: $white;
   }
-}
-
-.reveal .front {
-
 }
 
 /*********************************************
