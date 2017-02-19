@@ -129,12 +129,21 @@
         <div class="fragment" data-fragment-index="5" style="text-align:center; width:50%; background-color: #ff5e99; margin:15px auto;">Deployment</div>
       </section>
       <section>
+        <h2>Cost of Change</h2>
+        <img style="width: 100%;" src="assets/cost_curve.png" />
+      </section>
+      <section>
         <h2>Common Challenges</h2>
         <ul>
           <li class="fragment" data-fragment-index="0">Client can't really define desire outcome</li>
           <li class="fragment" data-fragment-index="1">developer's understanding of what needs to be built</li>
           <li class="fragment" data-fragment-index="2">client's understanding of technical implementations of the requirements</li>
         </ul>
+      </section>
+      <section>
+        <h2>Seriously, There Be Dragons</h2>
+        <img src="assets/used_features.jpg">
+        <p>The Rise and Fall of the Chaos Report Figures</p>
       </section>
     </section>
     <section>
@@ -163,9 +172,6 @@
           </ul>
         </aside>
       </section>
-    </section>
-
-    <section>
       <section>
         <h2>It's All About Behaviors</h2>
         <ul>
@@ -178,10 +184,12 @@
           <p>Think of an online shop. It doesn't bring revenue in just by existing. It's users do. Software accomplishes business goals by supporting human behaviors.</p>
         </aside>
       </section>
+    </section>
+    <section>
       <section>
         <h2>Goals</h2>
-        <p  class="fragment" data-fragment-index="0">Bad: I want to make more money.</p>
-        <img class="fragment" data-fragment-index="1" src="assets/too_many_ads.png" />
+        <p class="fragment" data-fragment-index="0">Bad: I want to make more money.</p>
+        <img style="width:100%" class="fragment" data-fragment-index="1" src="assets/too_many_ads.png" />
       </section>
       <section>
         <h2>Goals</h2>
@@ -193,8 +201,58 @@
         <p>Business goals are specific, measurable, and are time bound</p>
       </section>
     </section>
+    <section>
+      <section>
+        <h2>Plan with Examples</h2>
+        <p class="fragment" data-fragment-index="0">Imagine we have an ecommerce shop</p>
+        <p class="fragment" data-fragment-index="1">Feature: Add sales tax and a delivery cost on checkout</p>
+        <pre class="fragment" data-fragment-index="2"><code data-trim contenteditable>
+Sales tax is 20%
 
+Delivery cost for small orders (less than $20) is $3
 
+Delivery cost for medium orders (more than $20) is $2
+</code></pre>
+      </section>
+      <section>
+        <h2>Plan with Examples</h2>
+        <ul>
+          <li class="fragment" data-fragment-index="0">What comes first: sales tax or deliver fee?</li>
+          <li class="fragment" data-fragment-index="1">What happens when orders are exactly $20?</li>
+          <li class="fragment" data-fragment-index="2">Ambiguity will lead to misunderstandings</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Plan with Examples</h2>
+        <pre><code data-trim contenteditable>
+Given a product is priced at $15, when I add it to the order,
+          then the total order price should be $21
+
+Given a product is priced at $25, when I add it to the order,
+          then the total order price should be $32
+
+Given a product is priced at $20, when I add it to the order,
+          then the total order price should be $26
+</code></pre>
+      </section>
+      <section>
+        <h2>The magic words</h2>
+        <pre><code data-trim contenteditable>
+Given [initial context for the example]
+When [action that the actor in the system or stakeholder performs]
+Then [expected outcome of that action]
+</code></pre>
+      </section>
+      <section>
+        <h2>Drupal Example with the magic words</h2>
+        <p class="fragment" data-fragment-index="0">I want to be able to create and edit content on my site to inform the world that dogs are objectively better then cats.</p>
+<pre class="fragment" data-fragment-index="1"><code data-trim contenteditable>
+Given I using my website
+When I go to the login page
+Then I should be able to create content
+</code></pre>
+      </section>
+    </section>
     <section>
       <section>
         <h2>In Review</h2>
